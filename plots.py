@@ -12,7 +12,7 @@ def app(cars_df):
   for i in feat_lst:
     st.subheader(f"Scatter Plot between {i} and price")
     plt.figure(figsize = (15 , 10))
-    sns.scatterplot(cars_df[i] ,cars_df['price'])
+    sns.scatterplot(x = cars_df[i] ,y = cars_df['price'])
     st.pyplot()
 
   st.subheader("Visualisation Selector")

@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression as lr
 from sklearn.metrics import r2_score , mean_absolute_error , mean_squared_error , mean_squared_log_error 
 # Define the 'prediction()' function.
-@st.cache()
+@st.cache_data()
 def prediction(cars_df , cw , es , hp , dfwd , cc):
   X = cars_df.iloc[: , :-1]
   y = cars_df['price']
@@ -29,7 +29,7 @@ def prediction(cars_df , cw , es , hp , dfwd , cc):
 
   # S2.2: Define the 'app()' function as directed above.
 def app(cars_df):
-  st.markdown("<p style='color:blue;font-size:25px'> This app uses <b>Linear Regression</b> to predict the price of a car based on ypur inputs. </p>" , unsafe_allow_html = True)
+  st.markdown("<p style='color:blue;font-size:25px'> This app uses <b>Linear Regression</b> to predict the price of a car based on your inputs. </p>" , unsafe_allow_html = True)
   st.subheader("Select Values")
   cw = st.slider("Car Width" , float(cars_df['carwidth'].min()) , float(cars_df['carwidth'].max()))
   es = st.slider("Engine Size" , float(cars_df['enginesize'].min()) , float(cars_df['enginesize'].max()))

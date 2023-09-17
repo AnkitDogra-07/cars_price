@@ -16,7 +16,7 @@ words_dict = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "eight": 8, 
 def num_map(series):
     return series.map(words_dict)
 
-@st.cache()
+@st.cache_data()
 def load_data():
     cars_df = pd.read_csv("car-prices.csv")
     # Extract the name of the manufactures from the car names and display the first 25 cars to verify whether names are extracted successfully.
